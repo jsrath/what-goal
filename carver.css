@@ -1,0 +1,25 @@
+/* Defaults
+---------------------------------------------------------------------------- */
+
+/* Typographical Elements
+--------------------------------------------------- */
+
+body {
+    min-height: 2000px;
+}
+
+#partTwoButton {
+    margin-top: 40px;
+}
+
+#partTwo {
+    margin-top: 400px;
+}
+
+#addGoalBoxes, #removeGoalBoxes {
+    margin: 10px 20px 0px 0px;
+}
+
+#firstGoalText {
+    font-weight: bold;
+}
