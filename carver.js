@@ -1,3 +1,5 @@
+/* Variables
+---------------------------------------------------------------------------- */
 const boxArea = document.getElementById("goalBoxArea");
 const allBoxes = document.getElementsByClassName("goalInput");
 const firstBox = allBoxes[0];
@@ -10,7 +12,8 @@ const partTwo = document.getElementById("partTwo");
 
 partTwo.style.visibility = "hidden";
 
-//Add more goals
+/* Add or Remove Goal Boxes
+---------------------------------------------------------------------------- */
 function addFields() {
     let input = document.createElement("input");
     input.className = "goalInput";
@@ -30,18 +33,45 @@ function removeFields() {
     allBoxes[lastBox].focus();
 }
 
-boxArea.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
-        addFields();
-    }
+/* Event Listeners
+---------------------------------------------------------------------------- */
+
+/* Clicks
+--------------------------------------------------- */
+
+document.getElementById("addGoalBoxes").addEventListener("click", function (event) {
+    addFields();
+});
+
+document.getElementById("removeGoalBoxes").addEventListener("click", function (event) {
+    removeFields();
 });
 
 document.getElementById("partTwoButton").addEventListener("click", function (event) {
     createGoalArrays();
 });
 
+
+/* Enter
+--------------------------------------------------- */
+
+boxArea.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        addFields();
+    }
+});
+
+document.getElementById("scoreInput").addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        nextScore();
+    }
+});
+
+/* Create Goal Arrays
+---------------------------------------------------------------------------- */
+const goalArray = [];
+let questionNumber = 0;
 function createGoalArrays() {
-    const goalArray = [];
     for (let i = 0; i < allBoxes.length; i++) {
         goalArray[i] = [];
     }
@@ -50,12 +80,52 @@ function createGoalArrays() {
     }
     partOne.style.visibility = "hidden";
     partTwo.style.visibility = "visible";
-    document.getElementById("firstGoalText").textContent = goalArray[0][0];
-        
+    nextScore();
+}
+let questionCounter = 0;
+}
+function nextScore() {
+    let questionText;
+    if (questionCounter === 7) {
+        goalArray[questionNumber].push(document.getElementById("scoreInput").value);
+        questionNumber++;
+        questionCounter = 1;
+        if (questionNumber > lastBox) {
+            tableDisplay();
+            return;
+        }
     }
 
-function nextCriteria() {
-    document.write("Sup BITCHES!!!!");
+    if (questionCounter === 0) {
+        document.getElementById("firstGoalText").textContent = goalArray[questionNumber][0];
+        questionText = "How would you rate C?";
+    } else if (questionCounter === 1) {
+        questionText = "How would you rate A?";
+    } else if (questionCounter === 2) {
+        questionText = "How would you rate R?";
+    } else if (questionCounter === 3) {
+        questionText = "How would you rate V?";
+    } else if (questionCounter === 4) {
+        questionText = "How would you rate E?";
+    } else if (questionCounter === 5) {
+        questionText = "How would you rate R?";
+    }
+    document.getElementById("questionText").textContent = questionText;
+    questionCounter++;
+    if(questionCounter === 1 && questionNumber === 0 && document.getElementById("scoreInput").value === ""){
+        questionCounter = 0;
+        return;
+    }
+    goalArray[questionNumber].push(document.getElementById("scoreInput").value);
+    document.getElementById("scoreInput").value = "";
+}
+
+document.getElementById("nextScore").addEventListener("click", function (event) {
+    nextScore();
+});
+
+function tableDisplay() {
+    partTwo.style.visibility = "hidden";
 }
 
  /*   const input = document.createElement("input");

@@ -10,19 +10,17 @@
             <input class="goalInput" type="text" id="goalBox0" name="goalBox0" value="">
             </br>
         </div>
-        <button id="addGoalBoxes" onclick="addFields()">More</button>
-        <button id="removeGoalBoxes" onclick="removeFields()">Less</button>
+        <button id="addGoalBoxes">More</button>
+        <button id="removeGoalBoxes">Less</button>
         </br>
         <button id="partTwoButton"><a href="#partTwo">Next Step</a></button>
         </br>
     </div>
     <div id="partTwo">
         <p id=firstGoal>For your goal: <span id="firstGoalText"></span> please answer the following:</p>
-            <p>On a scale of 1-10, how critical is this goal to your life?</p>
-            <form action="nextCriteria()">
-                <input class="scoreInput" type="text" id="scoreBox0" name="scoreBox0" value="">
-                <input type="submit" value="Next">
-            </form>
+           <p><span id="questionText"></span></p>
+           <input id="scoreInput" type="text" value="">
+           <button id="nextScore">Next Question</button>
     </div>
     <script src="carver.js"></script>
 </body>
