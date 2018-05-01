@@ -83,7 +83,6 @@ function createGoalArrays() {
     nextScore();
 }
 let questionCounter = 0;
-}
 function nextScore() {
     let questionText;
     if (questionCounter === 7) {
