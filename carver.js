@@ -1,4 +1,4 @@
-/* Variables
+/* Part One Variables
 ---------------------------------------------------------------------------- */
 const boxArea = document.getElementById("goalBoxArea");
 const allBoxes = document.getElementsByClassName("goalInput");
@@ -9,8 +9,10 @@ let lastBox = allBoxes.length - 1;
 let boxIndex = 1;
 const partOne = document.getElementById("partOne");
 const partTwo = document.getElementById("partTwo");
+const partThree = document.getElementById("partThree");
 
 partTwo.style.visibility = "hidden";
+partThree.style.visibility = "hidden";
 
 /* Add or Remove Goal Boxes
 ---------------------------------------------------------------------------- */
@@ -36,7 +38,7 @@ function removeFields() {
 /* Event Listeners
 ---------------------------------------------------------------------------- */
 
-/* Clicks
+/* -- Clicks
 --------------------------------------------------- */
 
 document.getElementById("addGoalBoxes").addEventListener("click", function (event) {
@@ -51,8 +53,12 @@ document.getElementById("partTwoButton").addEventListener("click", function (eve
     createGoalArrays();
 });
 
+document.getElementById("nextScore").addEventListener("click", function (event) {
+    nextScore();
+});
 
-/* Enter
+
+/* -- Enter
 --------------------------------------------------- */
 
 boxArea.addEventListener("keyup", function (event) {
@@ -67,10 +73,23 @@ document.getElementById("scoreInput").addEventListener("keyup", function (event)
     }
 });
 
+/* Part Two Variables
+---------------------------------------------------------------------------- */
+let questionNumber = 0;
+let questionCounter = 0;
+let questionText = document.getElementById("questionText");
+let goalDisplay = document.getElementById("firstGoalText");
+const critical = "How critical is this to your life?";
+const accessible = "How accessible is this?";
+const recuperation = "Will you be able to recuperate?";
+const vulnerable = "How vulnerable is this?";
+const effect = "What effect will this have?";
+const recognize = "Can you easily recognize this?";
+const score = document.getElementById("scoreInput");
+
 /* Create Goal Arrays
 ---------------------------------------------------------------------------- */
 const goalArray = [];
-let questionNumber = 0;
 function createGoalArrays() {
     for (let i = 0; i < allBoxes.length; i++) {
         goalArray[i] = [];
@@ -80,92 +99,43 @@ function createGoalArrays() {
     }
     partOne.style.visibility = "hidden";
     partTwo.style.visibility = "visible";
-    nextScore();
+    questionText.textContent = critical;
+    goalDisplay.textContent = goalArray[questionNumber][0];
+    questionCounter = 1;
 }
-let questionCounter = 0;
+
+
+/* Cycle Through Questions
+---------------------------------------------------------------------------- */
 function nextScore() {
-    let questionText;
+    questionCounter++;
+    goalArray[questionNumber].push(score.value);
+    score.value = "";
     if (questionCounter === 7) {
-        goalArray[questionNumber].push(document.getElementById("scoreInput").value);
-        questionNumber++;
         questionCounter = 1;
+        questionNumber++;
         if (questionNumber > lastBox) {
             tableDisplay();
             return;
         }
+        goalDisplay.textContent = goalArray[questionNumber][0];
     }
-
-    if (questionCounter === 0) {
-        document.getElementById("firstGoalText").textContent = goalArray[questionNumber][0];
-        questionText = "How would you rate C?";
-    } else if (questionCounter === 1) {
-        questionText = "How would you rate A?";
+    if (questionCounter === 1) {
+        questionText.textContent = critical;
     } else if (questionCounter === 2) {
-        questionText = "How would you rate R?";
+        questionText.textContent = accessible;
     } else if (questionCounter === 3) {
-        questionText = "How would you rate V?";
+        questionText.textContent = recuperation;
     } else if (questionCounter === 4) {
-        questionText = "How would you rate E?";
+        questionText.textContent = vulnerable;
     } else if (questionCounter === 5) {
-        questionText = "How would you rate R?";
+        questionText.textContent = effect;
+    } else if (questionCounter === 6) {
+        questionText.textContent = recognize;
     }
-    document.getElementById("questionText").textContent = questionText;
-    questionCounter++;
-    if(questionCounter === 1 && questionNumber === 0 && document.getElementById("scoreInput").value === ""){
-        questionCounter = 0;
-        return;
-    }
-    goalArray[questionNumber].push(document.getElementById("scoreInput").value);
-    document.getElementById("scoreInput").value = "";
 }
-
-document.getElementById("nextScore").addEventListener("click", function (event) {
-    nextScore();
-});
 
 function tableDisplay() {
     partTwo.style.visibility = "hidden";
+    partThree.style.visibility = "visible";
 }
-
- /*   const input = document.createElement("input");
-	input.className = "carverAnswers";
-	input.type = "text";
-	input.id = "carver" + boxIndex++;
-	input.name = input.id;
-	boxArea.appendChild(input);
-	boxArea.appendChild(document.createElement("br"));
-	lastBox++;
-	allBoxes[lastBox].focus(); */
-
-
-/*//Create arrays
-const myArray = [];
-function goalArray (){
-	for (const i = 0; i<allBoxes.length; i++) {
-    myArray.push(allBoxes[i].value);
-    }
-}
-
-for(const i = 0; i<allBoxes.length; i++){
-	
-}
-function arrayz (){
-const array = [
-    [allBoxes[0].value],
-    [allBoxes[1].value],
-    [allBoxes[2].value]
-  ] // Creating a data array which a loop will source from
-
-const table = document.createElement('table');
-document.body.appendChild(table); // Drew the main table node on the document
-
-array.forEach(function(row) {
-  const tr = table.insertRow(); //Create a new row
-
-  row.forEach(function(column) {
-    const td = tr.insertCell();
-    td.innerText = column; // Take string from placeholder variable and append it to <tr> node
-  });
-});
-}
-*/
