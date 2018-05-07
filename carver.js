@@ -104,12 +104,16 @@ function createGoalArrays() {
     questionCounter = 1;
 }
 
-
 /* Cycle Through Questions
 ---------------------------------------------------------------------------- */
 function nextScore() {
     questionCounter++;
-    goalArray[questionNumber].push(score.value);
+    if (isNaN(score.value)) {
+        document.getElementById("errorMessage").textContent = "Please enter a number from 1 to 10";
+        return;
+    } else {
+        goalArray[questionNumber].push(Number(score.value));
+    }
     score.value = "";
     if (questionCounter === 7) {
         questionCounter = 1;
@@ -136,6 +140,52 @@ function nextScore() {
 }
 
 function tableDisplay() {
+    for (let i = 0; i < allBoxes.length; i++) {
+        const goalName = goalArray[i].shift();
+        const sum = goalArray[i].reduce((total, amount) => total + amount);
+        goalArray[i].push(sum);
+        goalArray[i].unshift(goalName);
+
+    }
+    
+    goalArray.sort(function (a, b) {
+        return b[7] - a[7]
+    });
+
     partTwo.style.visibility = "hidden";
     partThree.style.visibility = "visible";
+
+    var tableContainer = document.getElementById("tableContainer");
+    var resultsTable = document.createElement("table");
+    var resultsTableHead = document.createElement("thead");
+    var resultsTableBody = document.createElement("tbody");
+
+    for (let i = 0; i < allBoxes.length; i++) {
+        var row = document.createElement("tr");
+        for (var j = 0; j < 8; j++) {
+            var cell = document.createElement("td");
+            var cellText = document.createTextNode(goalArray[i][j]);
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+        }
+        resultsTableBody.appendChild(row);
+    }
+    resultsTable.appendChild(resultsTableBody);
+    tableContainer.appendChild(resultsTable);
+    resultsTable.setAttribute("border", "1");
 }
+
+/*     const table = document.createElement('table');
+    for (let i = 0; i < allBoxes.length; i++) {
+        var row = document.createElement('tr');
+        for (var j = 0; j < goalArray[i].length; j++) {
+            var cell = document.createElement('td');
+            cell.textContent = goalArray[i][j];
+            row.appendChild(cell);
+        }
+        table.appendChild(row);
+    }
+
+   return table;
+   document.getElementById("partThree").innterHTML = table;
+} */
