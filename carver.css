@@ -40,6 +40,15 @@ p {
 	padding: 0;
 }
 
+a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ffffff;
+}
+
 hr {
 	border: 0;
 	border-collapse: collapse;

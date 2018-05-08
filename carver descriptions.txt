@@ -1,0 +1,120 @@
+Which goal should you pursue?
+
+CRITICALITY
+
+
+Not all goals have the same value to your life.
+ 
+If you achieve this goal, will it have a significant impact on your life?
+
+Will this be a short-term impact or a long term one?
+
+If you achieve this goal, will it impact multiple areas of your life?
+
+
+ACCESSIBILITY
+
+Do you have, or can you easily obtain, the resources neccessary to accomplish this goal?
+
+Do have permanent access to these resources, or will you lose them?
+
+Do you know how to start and end this goal?
+
+Are there strong obstacles to reaching this goal?
+
+How long will this take to achieve?
+
+
+RECUPERABILITY
+
+If you achieve this goal, will it solve an issue permanently or is the issue likely to reoccur?
+
+How long will achieing this goal last?
+
+
+
+VULNERABILITY
+
+A target is vulnerable if the operational element has the means and expertise to successfully attack the target. When determining the vulnerability of a target, the scale of the critical component needs to be compared with the capability of the attacking element to destroy or damage it. In general, the attacking element may tend to-
+
+Choose special components.
+
+Do permanent damage.
+
+Prevent or inhibit cannibalization.
+
+Maximize effects through the use of onsite materials.
+
+Cause the target to self-destruct.
+
+Specifically, vulnerability depends on-
+
+The nature and construction of the target.
+
+The amount of damage required.
+
+The assets available; for example, personnel, expertise, motivation, weapons, explosives, and equipment.
+
+Table D-4 shows how vulnerability values are assigned on CARVER matrixes.
+
+Table D-4. Assigning vulnerability values.
+CRITERIA
+SCALE
+Vulnerable to long-range laser target designation, small arms fire, or charges of 5 pounds or less	
+9-10
+Vulnerable to light antiarmor weapons fire or charges of 5 to 10 pounds	
+7-8
+Vulnerable to medium antiarmor weapons fire, bulk charges of 10 to 30 pounds, or very careful placement of smaller charges	
+5-6
+Vulnerable to heavy antiarmor fire, bulk charges of 30 to 50 pounds, or requires special weapons	
+3-4
+Invulnerable to all but the most extreme targeting measures	
+1-2
+EFFECT
+The effect of a target attack is a measure of possible military, political, economic, psychological, and sociological impacts at the target and beyond. This is closely related to the measure of target criticality. The type and magnitude of given effects desired will help planners select targets and target components for attack. Effect in this context addresses all significant effects, whether desired or not, that may result once the selected target component is attacked. Traditionally, this element has addressed the effect on the local population, but now there are broader considerations. Effect is frequently neutral at the tactical (ODA) level.
+
+For example, the primary effect of the destruction of two adjacent long-range radar sites in an early warning system may be to open a hole in the system that is of sufficient size and duration to permit the attacker to launch a successful air or missile nuclear strike against the defender. Effects can also include-
+
+The triggering of countermeasures.
+
+Support or negation of PSYOP themes.
+
+Unemployment.
+
+Reprisals against the civilian populace.
+
+Collateral damage to other targets.
+
+Possible effects can be speculative and should be labelled as such. Effects of the same attack may be quite different at the tactical, operational, and strategic levels. For example, the destruction of a substation may not affect local power supply but cuts off all power to an adjacent region. Table D-5 shows how effect values are assigned on CARVER matrixes.
+
+Table D-5. Assigning effect values.
+CRITERIA
+SCALE
+Overwhelmingly positive effects; no significant negative effects	
+9-10
+Moderately positive effects; few significant negative effects	
+7-8
+No significant effects; neutral	
+5-6
+Moderately negative effects; few significant positive effects	
+3-4
+Overwhelmingly negative effects; no significant positive effects	
+1-2
+RECOGNIZABILITY
+A target's recognizability is the degree to which it can be recognized by an operational element and/or intelligence collection and reconnaissance assets under varying conditions. Weather has an obvious and significant impact on visibility. Rain, snow, and ground fog may obscure observation. Road segments with sparse vegetation and adjacent high ground provide excellent conditions for good observation. Distance, light, and season must also be considered.
+
+Other factors which influence recognizability include the size and complexity of the target, the existence of distinctive target signatures, the presence of masking or camouflage, and the technical sophistication and training of the attackers. Table D-6 shows how recognizability values are assigned on CARVER matrixes.
+
+Table D-6. Assigning recognizability values.
+CRITERIA
+SCALE
+The target is clearly recognizable under all conditions and from a distance; it requires little or no training for recognition 3-4	
+9-10
+The target is easily recognizable at small-arms range and requires a small amount of training for recognition	
+7-8
+The target is difficult to recognize at night or in bad weather, or might be confused with other targets or target components; it requires some training for recognition	
+5-6
+The target is difficult to recognize at night or in bad weather, even within small-arms range; it is easily confused with other targets or components, it requires extensive training for recognition	
+3-4
+The target cannot be recognized under any conditions, except by experts	
+1 -2
