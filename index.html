@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Zilla+Slab" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="site-container">
+    <div id="intro">
+      <h3>Welcome to whatgoal.com!</h3>
+      <p> We're here to help you figure out which goals to pursue.</p>
+    </div>
+    <div id="partOne">
+      <h1>What Are Your Goals?</h1>
+      <p>Please add as many as you wish, but more than one.</p>
+      <div id="goalBoxArea">
+        <input class="goalInput" type="text" id="goalBox0" name="goalBox0" placeholder="Enter a goal">
+      </div>
+      <button id="addGoalBoxes">More</button>
+      <button id="removeGoalBoxes">Less</button>
+      </br>
+      <button id="partTwoButton">Next Step</button>
+      </br>
+    </div>
+
+    <div id="partTwo">
+        <h1>For your goal:
+        <span id="firstGoalText"></span>
+      </h1>
+      <h2>Please answer the following:</h2>
+      <p>
+        <span id="questionText"></span>
+      </p>
+      <input id="scoreInput" type="text" placeholder="Enter a number from 1-10">
+      <br>
+      <p id="errorMessage"></p>
+      <button id="nextScore">Next Question</button>
+    </div>
+    <div id="partThree">
+      <h2>Finished!</h2>
+      <p>Based on your results, you should pursue <span id="winner"></span> first.</p>
+      <table id="tableContainer">
+        <thead>
+          <tr>
+          <th>Goal</th>
+          <th>C</th>
+          <th>A</th>
+          <th>R</th>
+          <th>V</th>
+          <th>E</th>
+          <th>R</th>
+          <th>Total</th>
+        </tr>
+        </thead>
+      </table>
+    </div>
+    <footer>
+        <p>Developed by <a target="_blank" rel="noopener noreferrer"href="http://www.jsrath.com">jsrath</a>.</p>
+      </footer>
+  </div>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

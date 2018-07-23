@@ -1,0 +1,164 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Zilla Slab', serif;
+}
+
+.site-container {
+  margin: 0 auto;
+  display: flex;
+  padding: 30px;
+  width: 60%;
+  flex-direction: column;
+}
+
+#intro {
+  background-color: eceff1;
+  border-radius: 3px;
+  border: 1px solid #333;
+  padding: 5px 30px;
+  margin-bottom: 20px;
+}
+
+#intro h3 {
+  font-size: 24px;
+}
+
+#partOne, #partTwo {
+  background-color: eceff1;
+  border-radius: 3px;
+  border: 1px solid #333;
+  padding: 30px;
+}
+
+input[type="text"] {
+  padding: 5px;
+  width: 50%;
+  min-width: 200px;
+  border: 1px solid #333;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 5px;
+  width: 10%;
+  min-width: 75px;
+  margin-top: 20px;
+  border: 1px solid #333;
+  background-color: #fff;
+}
+
+#partTwoButton, #nextScore {
+  min-width: 150px;
+  width: 20%;
+}
+
+#partTwoButton a, #nextScore a {
+  text-decoration: none;
+  color: #000;
+}
+
+#firstGoalText {
+  color: #333;
+}
+
+#tableContainer {
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #333;
+  border-collapse: collapse;
+}
+
+/* Header Styles
+--------------------------------------------------- */
+
+th {
+  border-right: 1px solid #999;
+  background-color: eceff1;
+  font-family: 'Zilla Slab', serif;
+  border-bottom: 3px solid #333;
+  font-weight: 400;
+  font-size: 20px;
+  padding: 20px;
+  text-align: left;
+}
+
+/* Row Styles
+--------------------------------------------------- */
+
+tr {
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  font-size: 16px;
+}
+
+/* Column Styles
+--------------------------------------------------- */
+
+td {
+  background: #fff;
+  padding: 20px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 18px;
+  border-right: 1px solid #999;
+}
+
+/* Row Color Effect
+--------------------------------------------------- */
+
+tr:nth-child(even) td {
+  background: eceff1;
+}
+
+/* Fix the Border
+--------------------------------------------------- */
+
+th:first-child {
+  border-top-left-radius: 3px;
+}
+
+th:last-child {
+  border-top-right-radius: 3px;
+  border-right: none;
+}
+
+tr:first-child {
+  border-top: none;
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius: 3px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius: 3px;
+}
+
+td:last-child, th:last-child {
+  font-weight: 700;
+  border-right: 0;
+  text-align: center;
+  padding: 0 30px;
+}
+
+#winner {
+  font-weight: 700;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+footer a {
+  color: #333;
+}
