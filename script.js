@@ -81,40 +81,46 @@ let questionNumber = 0;
 let questionCounter = 0;
 let questionText = document.getElementById('questionText');
 let goalDisplay = document.getElementById('firstGoalText');
-const critical = '<p>How important is this goal to your life?</p><p>From <strong> 1 (not important) to 10 (very important)</strong> how critical is this goal?</p>';
-const accessible = '<p>Do you have, or can you easily obtain, the resources necessary to accomplish this goal?</p><p>From <strong> 1 (no resources) to 10 (full resources)</strong> do you have the required resources?</p>';
-const recuperation = '<p>If you achieve this goal, will it solve an issue permanently or is the issue likely to reoccur?</p><p>From <strong> 1 (temporary) to 10 (permanent)</strong> how long will achieving this goal last?</p>';
-const vulnerable = '<p>How easy is this goal to achieve?</p><p>From <strong>1 (easy) to 10 (difficult)</strong> is this something you can practically achieve?</p>';
-const effect = '<p>If you achieve this goal, will it have a significant long-term impact on your life?</p><p>From <strong> 1 (least impact) to 10 (most impact)</strong> how much impact will this goal have on your life?</p>';
-const recognize = '<p>Is this goal clearly defined and easy to recognize or is it unclear?</p><p>From <strong> 1 (unclear) to 10 (very clear)</strong> how defined is this goal?</p>';
+const critical = '<p>How important is this goal to your life?</p><p>From <span class="bold"> 1 (not important) to 10 (very important)</span> how critical is this goal?</p>';
+const accessible = '<p>Do you have, or can you easily obtain, the resources necessary to accomplish this goal?</p><p>From <span class="bold"> 1 (no resources) to 10 (full resources)</span> do you have the required resources?</p>';
+const recuperation = '<p>If you achieve this goal, will it solve an issue permanently or is the issue likely to reoccur?</p><p>From <span class="bold"> 1 (temporary) to 10 (permanent)</span> how long will achieving this goal last?</p>';
+const vulnerable = '<p>How easy is this goal to achieve?</p><p>From <span class="bold">1 (easy) to 10 (difficult)</span> is this something you can practically achieve?</p>';
+const effect = '<p>If you achieve this goal, will it have a significant long-term impact on your life?</p><p>From <span class="bold"> 1 (least impact) to 10 (most impact)</span> how much impact will this goal have on your life?</p>';
+const recognize = '<p>Is this goal clearly defined and easy to recognize or is it unclear?</p><p>From <span class="bold"> 1 (unclear) to 10 (very clear)</span> how defined is this goal?</p>';
 const score = document.getElementById('scoreInput');
 
 /* Create Goal Arrays
 ---------------------------------------------------------------------------- */
 const goalArray = [];
 function createGoalArrays() {
-  for (let i = 0; i < allBoxes.length; i++) {
-    goalArray[i] = [];
+  if (allBoxes.length > 1) {
+    for (let i = 0; i < allBoxes.length; i++) {
+      goalArray[i] = [];
+    }
+    for (let i = 0; i < allBoxes.length; i++) {
+      goalArray[i].push(allBoxes[i].value);
+    }
+    partOne.style.display = 'none';
+    partTwo.style.display = 'block';
+    questionText.innerHTML = critical;
+    goalDisplay.innerHTML = goalArray[questionNumber][0];
+    questionCounter = 1;
+  } else {
+    document.getElementById('noOfGoals').textContent = 'Please enter more than one goal!'
+    setTimeout(() => {
+      document.getElementById('noOfGoals').textContent = ''
+    }, 3000);
   }
-  for (let i = 0; i < allBoxes.length; i++) {
-    goalArray[i].push(allBoxes[i].value);
-  }
-  partOne.style.display = 'none';
-  intro.style.display = 'none';
-  partTwo.style.display = 'block';
-  questionText.innerHTML = critical;
-  goalDisplay.innerHTML = goalArray[questionNumber][0];
-  questionCounter = 1;
 }
 
 /* Cycle Through Questions
 ---------------------------------------------------------------------------- */
 function nextScore() {
-  questionCounter++;
   if (isNaN(score.value) || score.value < 1) {
     document.getElementById('errorMessage').textContent = 'Whoops! Please enter a number from 1 to 10';
     return;
   } else {
+    questionCounter++;
     document.getElementById('errorMessage').textContent = '';
     goalArray[questionNumber].push(Number(score.value));
   }

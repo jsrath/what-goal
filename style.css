@@ -1,123 +1,215 @@
-html, body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background: #b2dbbf;
+  background: -webkit-linear-gradient(to left, #d5ebdc, #b2dbbf);
 }
 
 h1, h2, h3 {
-  font-family: 'Zilla Slab', serif;
-}
-
-.site-container {
-  margin: 0 auto;
-  display: flex;
-  padding: 30px;
-  width: 60%;
-  flex-direction: column;
-}
-
-#intro {
-  background-color: eceff1;
-  border-radius: 3px;
-  border: 1px solid #333;
-  padding: 5px 30px;
-  margin-bottom: 20px;
-}
-
-#intro h3 {
-  font-size: 24px;
-}
-
-#partOne, #partTwo {
-  background-color: eceff1;
-  border-radius: 3px;
-  border: 1px solid #333;
-  padding: 30px;
-}
-
-input[type="text"] {
-  padding: 5px;
-  width: 50%;
-  min-width: 200px;
-  border: 1px solid #333;
+  font-family: 'Montserrat', sans-serif;
+  color: #247BA0;
   margin-bottom: 10px;
 }
 
+h1, h2 {
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  line-height: 2;
+  color: #333333;
+}
+
+.site-container {
+  min-height: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-bar {
+  margin: 0;
+  padding: 15px 0;
+  width: 100%;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  background: white;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-inner {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left p {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.header-left h2 {
+  font-size: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.header-right a {
+  text-decoration: none;
+  color: #FF1654;
+  font-weight: 700;
+}
+
+#noOfGoals {
+  font-style: italic;
+  font-size: 14px;
+  color: #FF1654;
+}
+
+#partOne, #partTwo, #partThree {
+  background: white;
+  min-width: 200px;
+  border: 0 none;
+  border-radius: 0px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  width: 60%;
+  margin: 50px;
+}
+
+.bold {
+  font-weight: 700;
+  color: #247BA0;
+}
+
+#partTwo {
+  width: 70%;
+}
+
+input[type="text"] {
+  min-width: 200px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  margin-top: 10px;
+  width: 60%;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: #247BA0;
+}
+
+input:focus {
+  box-shadow: none;
+  border: 1px solid #247BA0;
+  outline-width: 0;
+  transition: All 0.5s ease-in;
+  -webkit-transition: All 0.5s ease-in;
+  -moz-transition: All 0.5s ease-in;
+  -o-transition: All 0.5s ease-in;
+}
+
 button {
-  padding: 5px;
-  width: 10%;
-  min-width: 75px;
-  margin-top: 20px;
-  border: 1px solid #333;
-  background-color: #fff;
+  width: 100px;
+  background: #247BA0;
+  color: white;
+  border: 0 none;
+  border-radius: 25px;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+}
+
+button:hover, button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #247BA0;
 }
 
 #partTwoButton, #nextScore {
   min-width: 150px;
   width: 20%;
+  background-color: #FF1654;
 }
 
-#partTwoButton a, #nextScore a {
-  text-decoration: none;
-  color: #000;
+#partTwoButton:hover, #nextScore:hover {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #FF1654;
+}
+
+#partThree {
+  display: flex;
+  flex-direction: column;
+}
+
+#partThree p {
+  margin-bottom: 15px;
 }
 
 #firstGoalText {
-  color: #333;
+  color: #FF1654;
+}
+
+#goalBoxArea {
+  margin: 10px 0;
 }
 
 #tableContainer {
-  padding: 5px;
-  border-radius: 3px;
-  border: 1px solid #333;
   border-collapse: collapse;
+  border: 1px solid #247BA0;
+  margin: 20px 0;
+  max-width: 200px
 }
-
-/* Header Styles
---------------------------------------------------- */
 
 th {
-  border-right: 1px solid #999;
-  background-color: eceff1;
-  font-family: 'Zilla Slab', serif;
-  border-bottom: 3px solid #333;
+  border-right: 1px solid #247BA0;
+  border-bottom: 3px solid #247BA0;
+  text-transform: uppercase;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
   padding: 20px;
   text-align: left;
+  color: #247BA0;
+  font-weight: 700;
+  background: #f7f7f7;
 }
 
-/* Row Styles
---------------------------------------------------- */
-
 tr {
-  border-top: 1px solid #999;
-  border-bottom: 1px solid #999;
+  border-top: 1px solid #247BA0;
+  border-bottom: 1px solid #247BA0;
   font-size: 16px;
 }
 
-/* Column Styles
---------------------------------------------------- */
-
 td {
+  color: #333333;
   background: #fff;
   padding: 20px;
   text-align: left;
   vertical-align: middle;
   font-size: 18px;
-  border-right: 1px solid #999;
+  border-right: 1px solid #247BA0;
 }
-
-/* Row Color Effect
---------------------------------------------------- */
 
 tr:nth-child(even) td {
-  background: eceff1;
+  background: #f7f7f7;
 }
-
-/* Fix the Border
---------------------------------------------------- */
 
 th:first-child {
   border-top-left-radius: 3px;
@@ -136,29 +228,15 @@ tr:last-child {
   border-bottom: none;
 }
 
-tr:last-child td:first-child {
-  border-bottom-left-radius: 3px;
-}
-
-tr:last-child td:last-child {
-  border-bottom-right-radius: 3px;
-}
-
 td:last-child, th:last-child {
   font-weight: 700;
   border-right: 0;
   text-align: center;
   padding: 0 30px;
+  color: #FF1654;
 }
 
 #winner {
+  color: #FF1654;
   font-weight: 700;
-}
-
-footer {
-  margin-top: 20px;
-}
-
-footer a {
-  color: #333;
 }
