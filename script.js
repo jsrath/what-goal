@@ -7,7 +7,6 @@ const allBreaks = document.getElementsByTagName('br');
 let lastBreak = allBreaks.length - 1;
 let lastBox = allBoxes.length - 1;
 let boxIndex = 1;
-const intro = document.getElementById('intro');
 const partOne = document.getElementById('partOne');
 const partTwo = document.getElementById('partTwo');
 const partThree = document.getElementById('partThree');
